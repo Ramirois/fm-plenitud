@@ -33,7 +33,7 @@ export const CustomHeader = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+                    <button className="md:hidden p-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>

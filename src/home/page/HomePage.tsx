@@ -1,12 +1,12 @@
-import { Play, Pause, SkipBack, SkipForward, Volume2, Radio, Waves, Users } from "lucide-react"
-import { useState } from "react"
+import { Play, Radio, Waves, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useNavigate } from "react-router"
 
 
 export const HomePage = () => {
-    const [isPlaying, setIsPlaying] = useState(false)
+    const navigate = useNavigate();
 
     return (
         <div className="min-h-screen bg-background">
@@ -31,21 +31,23 @@ export const HomePage = () => {
                                 en vivo.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                <Button size="lg" className="text-base">
+                                <Button size="lg" className="text-base" onClick={() => navigate("/radio")}>
                                     <Play className="w-4 h-4" />
                                     Escuchar Ahora
                                 </Button>
-                                <Button size="lg" variant="outline" className="text-base bg-transparent">
+                                {/* <Button size="lg" variant="outline" className="text-base bg-transparent">
                                     Información de Frecuencia
-                                </Button>
+                                </Button> */}
                             </div>
                         </div>
 
-                        
+
                     </div>
                 </div>
             </section>
+            <section className="">
 
+            </section>
             <section className="py-24 bg-secondary/30 border-t border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 space-y-4">

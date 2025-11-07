@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useNavigate } from "react-router"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import { programs } from "@/data/programs.radio"
 
 
 export const HomePage = () => {
@@ -45,8 +47,24 @@ export const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <section className="">
-
+            <section className="w-full">
+                <Carousel
+                 className="w-full max-w-xs"
+                plugins={[
+                    // Autoplay
+                ]}
+                 >
+                    <CarouselContent>
+                    {programs.map(({ name, hour, image}, index) => (
+                        <CarouselItem key={name}>
+                            <div className="p-1">
+                                <img src="image" alt="name" />
+                            </div>
+                        </CarouselItem>
+                    ))}
+                    </CarouselContent>
+                    
+                </Carousel>
             </section>
             <section className="py-24 bg-secondary/30 border-t border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

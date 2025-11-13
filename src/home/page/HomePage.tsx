@@ -1,11 +1,16 @@
+import { lazy, Suspense } from "react"
 import { Play, Radio, Waves, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { useNavigate } from "react-router"
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { programs } from "@/data/programs.radio"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+// import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+// import { programs } from "@/data/programs.radio"
+// import Autoplay from "embla-carousel-autoplay"
+// import { AnimatedBox } from "../components/animation/AnimatedBox"
+import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
+const AnimatedBox = lazy(() => import("../components/animation/AnimatedBox"));
 
 export const HomePage = () => {
     const navigate = useNavigate();
@@ -43,28 +48,51 @@ export const HomePage = () => {
                             </div>
                         </div>
 
+                        {/* Columna microfono */}
+                        {
+                            window.innerWidth >= 768 && (
+                                <div className="w-full h-[600px]">
+                                    <Suspense
+                                        fallback={
+                                            <DotLottieReact
+                                                src="/loading.json"
+                                                loop
+                                                autoplay
+                                            />
+                                        }
+                                    >
+                                        <AnimatedBox />
+                                    </Suspense>
+                                </div>
 
+                            )
+                        }
                     </div>
                 </div>
-            </section>
+            </section >
             <section className="w-full">
-                <Carousel
-                 className="w-full max-w-xs"
+                {/* <Carousel
+                 className="w-full max-w-xs " 
                 plugins={[
-                    // Autoplay
+                    Autoplay({
+                        delay: 4000,
+                        stopOnInteraction: true,
+
+                    })
                 ]}
                  >
                     <CarouselContent>
                     {programs.map(({ name, hour, image}, index) => (
                         <CarouselItem key={name}>
-                            <div className="p-1">
+                            <div className="p-1 w-full ">
                                 <img src="image" alt="name" />
                             </div>
                         </CarouselItem>
                     ))}
                     </CarouselContent>
                     
-                </Carousel>
+                </Carousel> */}
+
             </section>
             <section className="py-24 bg-secondary/30 border-t border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,7 +144,7 @@ export const HomePage = () => {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <Card className="bg-linear-to-r from-primary/10 to-primary/5 border-primary/20">
                         <CardHeader className="text-center">
-                            <CardTitle className="text-4xl mb-4">Sintoniza RadioMax FM 87.7</CardTitle>
+                            <CardTitle className="text-4xl mb-4">Sintoniza FM Plenitud 87.7</CardTitle>
                             <CardDescription className="text-lg">
                                 Escucha en línea o en tu radio. Música 24/7. Completamente gratis.
                             </CardDescription>
@@ -133,6 +161,6 @@ export const HomePage = () => {
                     </Card>
                 </div>
             </section>
-        </div>
+        </div >
     )
 }

@@ -1,5 +1,5 @@
 import { RadioPlayer } from "./RadioPlayer"
-import { VideoPlayer } from "./VideoPlayer"
+import { VideoPlayer } from "../../components/VideoPlayer"
 
 export const RadioPlayerDesktop = () => {
     return (

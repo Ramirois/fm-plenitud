@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Waves } from "lucide-react"
 import { RadioPlayer } from "../components/RadioPlayer"
 import logo from "../../assets/logo_radio_plenitud.png"
-import { VideoPlayer } from "../components/VideoPlayer"
+import { VideoPlayer } from "../../components/VideoPlayer"
 import { useEffect, useState } from "react"
 import { RadioPlayerDesktop } from "../components/RadioPlayerDesktop"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"

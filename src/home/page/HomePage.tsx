@@ -1,17 +1,9 @@
-import { lazy, Suspense } from "react"
 import { Play, Radio, Waves, Users } from "lucide-react"
 import { useNavigate } from "react-router"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-// import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-// import { programs } from "@/data/programs.radio"
-// import Autoplay from "embla-carousel-autoplay"
-// import { AnimatedBox } from "../components/animation/AnimatedBox"
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
-
-const AnimatedBox = lazy(() => import("../components/animation/AnimatedBox"));
-
 export const HomePage = () => {
     const navigate = useNavigate();
 
@@ -21,7 +13,7 @@ export const HomePage = () => {
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
                 <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-background to-background"></div>
 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="relative max-w-3/4 mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-8">
                             <div className="space-y-4">
@@ -42,27 +34,19 @@ export const HomePage = () => {
                                     <Play className="w-4 h-4" />
                                     Escuchar Ahora
                                 </Button>
-                                {/* <Button size="lg" variant="outline" className="text-base bg-transparent">
-                                    Información de Frecuencia
-                                </Button> */}
                             </div>
                         </div>
 
                         {/* Columna microfono */}
                         {
                             window.innerWidth >= 768 && (
-                                <div className="w-full h-[600px]">
-                                    <Suspense
-                                        fallback={
-                                            <DotLottieReact
-                                                src="/loading.json"
-                                                loop
-                                                autoplay
-                                            />
-                                        }
-                                    >
-                                        <AnimatedBox />
-                                    </Suspense>
+                                <div className="w-full h-full">
+                                    <DotLottieReact
+                                        src="/gif-podcast-studio.json"
+                                        loop
+                                        autoplay
+
+                                    />
                                 </div>
 
                             )
@@ -71,28 +55,6 @@ export const HomePage = () => {
                 </div>
             </section >
             <section className="w-full">
-                {/* <Carousel
-                 className="w-full max-w-xs " 
-                plugins={[
-                    Autoplay({
-                        delay: 4000,
-                        stopOnInteraction: true,
-
-                    })
-                ]}
-                 >
-                    <CarouselContent>
-                    {programs.map(({ name, hour, image}, index) => (
-                        <CarouselItem key={name}>
-                            <div className="p-1 w-full ">
-                                <img src="image" alt="name" />
-                            </div>
-                        </CarouselItem>
-                    ))}
-                    </CarouselContent>
-                    
-                </Carousel> */}
-
             </section>
             <section className="py-24 bg-secondary/30 border-t border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

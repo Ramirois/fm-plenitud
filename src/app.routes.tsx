@@ -5,6 +5,7 @@ import { AboutPage } from "./home/page/AboutPage";
 import { ContactPage } from "./home/page/ContactPage";
 import { RadioLayout } from "./radio/layout/RadioLayout";
 import { RadioPage } from "./radio/page/RadioPage";
+import { Error404 } from "./components/Error404";
 
 
 
@@ -37,5 +38,9 @@ export const appRoutes = createBrowserRouter([
                 element: <RadioPage />
             }
         ]
+    },
+    {
+        path: "*",
+        element: <Error404 />
     }
 ])
